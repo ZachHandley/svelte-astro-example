@@ -1,31 +1,31 @@
 <script>
-  import { T, useFrame } from '@threlte/core'
-  import { interactivity } from '@threlte/extras'
-  import { spring } from 'svelte/motion'
-  import { someAtom } from "./Store.ts"
+  import { T, useFrame } from "@threlte/core";
+  import { interactivity } from "@threlte/extras";
+  import { spring } from "svelte/motion";
+  import { someAtom } from "./Store.ts";
 
-  interactivity()
-  $: someReactiveValue = 1
-  const scale = spring(someReactiveValue)
-  let rotation = 0
+  interactivity();
+  $: someReactiveValue = 1;
+  const scale = spring(someReactiveValue);
+  let rotation = 0;
   useFrame((state, delta) => {
-    rotation += delta
-  })
+    rotation += delta;
+  });
 
   someAtom.subscribe((newValue) => {
-    if (newValue === 'oohyeah') {
+    if (newValue === "ouchthathurts") {
       someReactiveValue = 5;
     } else {
       someReactiveValue = 1;
     }
-  })
+  });
 </script>
 
 <T.PerspectiveCamera
   makeDefault
   position={[10, 10, 10]}
   on:create={({ ref }) => {
-    ref.lookAt(0, 1, 0)
+    ref.lookAt(0, 1, 0);
   }}
 />
 
@@ -43,7 +43,7 @@
   <T.MeshStandardMaterial color="hotpink" />
 </T.Mesh>
 
-<T.Mesh rotation.x={-Math.PI/2} receiveShadow>
-  <T.CircleGeometry args={[4, 40]}/>
+<T.Mesh rotation.x={-Math.PI / 2} receiveShadow>
+  <T.CircleGeometry args={[4, 40]} />
   <T.MeshStandardMaterial color="white" />
 </T.Mesh>

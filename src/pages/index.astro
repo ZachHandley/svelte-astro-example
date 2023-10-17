@@ -7,20 +7,21 @@ import Base from "../components/Base.svelte";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<style>
-			:root {
-				margin: 0;
-				padding: 0;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<Base client:only="svelte" />
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+      :root {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <Base client:only="svelte" />
+    </main>
+  </body>
 </html>
