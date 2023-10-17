@@ -1,0 +1,20 @@
+{
+  "name": "@example/framework-svelte",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.22.20",
+    "@nanostores/persistent": "^0.9.1",
+    "@threlte/core": "^6.0.10",
+    "@threlte/extras": "^7.2.0",
+    "@types/three": "^0.157.0",
+    "nanostores": "^0.9.4",
+    "three": "^0.157.0"
+  }
+}
