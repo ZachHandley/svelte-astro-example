@@ -5,18 +5,21 @@
   import { someAtom } from "./Store.ts";
 
   interactivity();
-  $: someReactiveValue = 1;
+  let someReactiveValue = 1;
   const scale = spring(someReactiveValue);
+  let timeMultiplier = 1;
   let rotation = 0;
   useFrame((state, delta) => {
-    rotation += delta;
+    rotation += delta * timeMultiplier;
   });
 
   someAtom.subscribe((newValue) => {
     if (newValue === "ouchthathurts") {
       someReactiveValue = 5;
+      timeMultiplier = 5;
     } else {
       someReactiveValue = 1;
+      timeMultiplier = 1;
     }
   });
 </script>

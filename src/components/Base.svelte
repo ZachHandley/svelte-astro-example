@@ -5,6 +5,7 @@
 
   const changeTheATOM = () => {
     const value = someAtom.get();
+    console.log(`The ATOM is currently: ${value}`);
     if (value === "oohyeah") {
       someAtom.set("ouchthathurts");
     } else {
